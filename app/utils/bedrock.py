@@ -1,7 +1,9 @@
-import boto3
-import os
 import json
+
+import boto3
 from fastapi import HTTPException
+
+from app.configs.environs import config
 
 
 def ask_claude(prompt: str = "오늘 하루 기분을 알려줘"):
@@ -10,9 +12,9 @@ def ask_claude(prompt: str = "오늘 하루 기분을 알려줘"):
         bedrock = boto3.client(
             service_name="bedrock-runtime",
             region_name="us-west-2",  # specify your region
-            aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
-            aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
-            aws_session_token=os.environ.get("AWS_SESSION_TOKEN"),
+            aws_access_key_id=config.AWS_ACCESS_KEY_ID,
+            aws_secret_access_key=config.AWS_SECRET_ACCESS_KEY,
+            aws_session_token=config.AWS_SESSION_TOKEN,
         )
 
         # Create the request body for Claude 3
