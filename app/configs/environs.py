@@ -16,6 +16,8 @@ class GlobalConfig(BaseConfig):
     AWS_ACCESS_KEY_ID: Optional[str] = None
     AWS_SECRET_ACCESS_KEY: Optional[str] = None
     AWS_SESSION_TOKEN: Optional[str] = None
+    DATABASE_URL: Optional[str] = None
+    DB_FORCE_ROLL_BACK: bool = False
 
 
 @lru_cache()

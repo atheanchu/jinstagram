@@ -40,7 +40,7 @@ def configure_logging() -> None:
                 "uvicorn": {"handlers": ["default", "rotating_file"], "level": "INFO"},
                 "app": {
                     "handlers": handlers,
-                    "level": "INFO",
+                    "level": "DEBUG",
                     "propagate": False,
                 },
             },
