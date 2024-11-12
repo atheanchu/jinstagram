@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+boto3
+logger
+python-json-logger
+rich
+pydantic_settings
+sqlalchemy
+databases[aiosqlite]
+sqlalchemy[asyncpg] 
+databases[postgresql]
+psycopg2-binary
+pillow
+opensearch-py
